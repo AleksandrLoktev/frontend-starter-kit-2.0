@@ -1,0 +1,46 @@
+{
+  "name": "Fe-starter",
+  "version": "1.0.0",
+  "description": "This is a base minimum for srating new fe project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gulp": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AleksandrLoktev/Avis-theme-current.git"
+  },
+  "author": "Alex Loktev",
+  "license": "ISC",
+  "browserify": {
+    "transform": [
+      "babelify"
+    ]
+  },
+  "lintOptions": {
+    "esnext": true
+  },
+  "bugs": {
+    "url": "https://github.com/AleksandrLoktev/Avis-theme-current/issues"
+  },
+  "homepage": "https://github.com/AleksandrLoktev/Avis-theme-current#readme",
+  "devDependencies": {
+    "browser-sync": "^2.26.3",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-color": "0.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-if": "^2.0.2",
+    "gulp-inject": "^4.3.2",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-notify": "^3.2.0",
+    "gulp-nunjucks-render": "^2.2.2",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.4",
+    "gulp-uglify": "^3.0.1",
+    "gulp-watch": "^5.0.1",
+    "node-emoji": "^1.8.1",
+    "require-dir": "^1.1.0"
+  }
+}
