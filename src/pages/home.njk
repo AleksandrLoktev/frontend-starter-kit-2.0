@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Your Website</title>
+    <link rel="stylesheet" type="text/css" href="../css/style.min.css">
+</head>
+
+<body>
+
+{% block header %}
+
+{% endblock %}
+
+<main>
+    <h2>Title</h2>
+    <p>Donec eu libero sit amet quam egestas semper. Aenean ultricies mi vitae est. Mauris placerat eleifend leo.</p>
+</main>
+
+{% set items = ['f', 's', 'd'] %}
+
+<ul>
+    {% for item in items %}
+        <li>{{ item }}</li>
+    {% endfor %}
+</ul>
+{% block footer %}
+
+{% endblock %}
+
+{% include './core/components/footer/footer.njk' %}
+</body>
+    <script type="text/javascript" src="../js/bundle.js"></script>
+</html>
