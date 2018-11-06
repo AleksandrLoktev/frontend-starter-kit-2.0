@@ -6,23 +6,24 @@ var gulp = require('gulp'),
     reload = browserSync.reload;
 
 gulp.task('tpl', () => {
-    return gulp.src(config.tpl.src)
+    config.tpl.src.map((entry) => {
+        return gulp.src(entry)
         .pipe(nunjucksRender({
-            path: ['src/templates/'] // String or Array
-        }).on('error', function(error) {
+            path: './',
+            ext: '.html'
+            }).on('error', function(error) {
+            console.log(error);
                 notify.onError({
                     title:    "Gulp",
-                    message:  "Error: <%= error.messageOriginal %>" +
-                    "Line: <%= error.line %>",
+                    message:  "<%= error.name %><br>" +
+                              "Error: <%= error.message %><br>" +
+                              "Path: <%= error.fileName %>",
                     sound:    "Beep"
                 })(error);
-
-                console.log(color(emoji.get('coffee'), 'RED'), 'font-size:100px;');
-                console.error(color('File: ' + error.relativePath, 'RED'));
-                console.error(color('Line: ' + error.line, 'RED'));
-                console.error(color('Error: ' + error.messageOriginal, 'RED'));
             })
         )
-        .pipe(gulp.dest(config.tpl.build))
-        .pipe(reload({stream: true}));
+            .pipe(gulp.dest(config.tpl.build))
+            .pipe(reload({stream: true}));
+    });
+
 });
