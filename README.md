@@ -5,7 +5,6 @@ It has to to shrink spending for creating project.
 
 Installation
 ============
-============
 
 Firstly, you have to install packages with helps command:
 ```
