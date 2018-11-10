@@ -12,8 +12,7 @@ var sourcemaps = require('gulp-sourcemaps');
 
 
 gulp.task('scss', function scss() {
-     config.style.src.map((entry) => {
-        gulp.src(entry)
+        gulp.src(config.style.src)
         .pipe(sourcemaps.init())
             .pipe(sass().on('error', function(error) {
                 notify.onError({
@@ -33,7 +32,6 @@ gulp.task('scss', function scss() {
             .pipe(sourcemaps.write())
             .pipe(gulp.dest(config.style.build))
             .pipe(reload({stream: true}));
-    });
 });
 
 

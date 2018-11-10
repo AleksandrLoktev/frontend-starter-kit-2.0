@@ -6,3 +6,5 @@ node_modules
 
 # Ignore build html files.
 build
+
+npm.gif

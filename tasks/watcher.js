@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
-    watch = require('gulp-watch');
+    watch = require('gulp-watch'),
+    fonts = ['clean-font-css', 'font', 'font-css', 'add'];
 
 gulp.task('watch', function () {
     watch(config.tpl.watch, function(event, cb) {
@@ -14,9 +15,9 @@ gulp.task('watch', function () {
         gulp.start('scripts');
     });
 
-    // watch([config.icons.src], function(event, cb) {
-    //     gulp.start('iconFont');
-    // });
+    watch(config.fonts.src, function(event, cb) {
+            gulp.start('fonts');
+    });
     // watch([path.watch.img], function(event, cb) {
     //     gulp.start('image:build');
     // });

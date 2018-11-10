@@ -5,6 +5,9 @@ gulp.task('default', [
         'clear',
         'scripts',
         'tpl',
+        'font',
+        'font-css',
         'style',
-        'server'
+        'server',
+        'add'
     ]);

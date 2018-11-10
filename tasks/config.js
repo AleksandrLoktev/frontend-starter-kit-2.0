@@ -1,6 +1,6 @@
 module.exports = {
     style : {
-        src: ['./src/**/*.scss', './core/**/*.scss'],
+        src: ['./src/scss/main.scss', './src/**/*.scss', './core/**/*.scss', '!./src/scss/**/_*.scss'],
         build: 'build/css/'
     },
     tpl : {
@@ -13,8 +13,15 @@ module.exports = {
         watch:['./src/**/*.ts', './core/**/*.ts'],
         build: 'build/js/'
     },
-    icons: {
-        src: ['./src/assets/icons/*.svg'],
-        build: 'build/fonts/'
+    fonts: {
+        srcStyle: ['./src/assets/fonts'],
+        src: ['./src/assets/fonts/**/*', '!./src/assets/fonts/**/**.html', '!./src/assets/fonts/**/**.css'],
+        buildStyle: './src/scss',
+        build: 'build/fonts/',
+        git: './src/scss/**'
     }
+    // icons: {
+    //     src: ['./src/assets/icons/*.svg'],
+    //     build: 'build/fonts/'
+    // }
 };
