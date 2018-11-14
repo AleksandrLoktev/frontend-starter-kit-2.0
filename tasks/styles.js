@@ -36,4 +36,4 @@ gulp.task('scss', function scss() {
 
 
 // gulp.task('style', gulp.series('scss', 'watch'));
-gulp.task('style', ['scss', 'watch']);
+gulp.task('style', ['scss']);

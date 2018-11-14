@@ -1,0 +1,18 @@
+{% import 'core/components/main-menu/main-menu.njk' as menuBlock %}
+
+{% set default = {
+    logo: true,
+    languageSwitcher: {
+        items: [
+            'En',
+            'Ru'
+        ],
+        dropdown: false
+    }
+} %}
+
+{% macro header(menuSettings) %}
+    <header class="header">
+        {{ menuBlock.mainMenu(menuSettings) }}
+    </header>
+{% endmacro %}

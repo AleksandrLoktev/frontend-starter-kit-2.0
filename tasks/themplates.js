@@ -8,15 +8,12 @@ var gulp = require('gulp'),
 gulp.task('tpl', () => {
     config.tpl.src.map((entry) => {
         return gulp.src(entry)
-        .pipe(nunjucksRender({
-            path: './',
-            ext: '.html'
-            }).on('error', function(error) {
+        .pipe(nunjucksRender().on('error', function(error) {
             console.log(error);
                 notify.onError({
                     title:    "Gulp",
                     message:  "<%= error.name %><br>" +
-                              "Error: <%= error.message %><br>" +
+                              "Error: <%= error.message %>" +
                               "Path: <%= error.fileName %>",
                     sound:    "Beep"
                 })(error);

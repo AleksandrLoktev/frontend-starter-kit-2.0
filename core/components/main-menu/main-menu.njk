@@ -1,0 +1,72 @@
+{% import 'core/components/hendler/hendler.njk' as heandler %}
+
+{% set defaultMenuSettings = {
+    inline: true,
+    wide: false
+} %}
+
+{% set menuItems = [
+    {
+        menuItemName: 'Item 1',
+        menuItemlink: '/'
+    },
+    {
+        menuItemName: 'Item 2',
+        menuItemlink: '/'
+    },
+    {
+        menuItemName: 'Item 3',
+        menuItemlink: '/r',
+        menuSubitems: [
+            {
+                menuItemName: 'Item 3.1',
+                menuItemlink: '/h'
+            },
+            {
+                menuItemName: 'Item 3.2',
+                menuItemlink: '/f'
+            }
+        ]
+    },
+    {
+        menuItemName: 'Item 4',
+        menuItemlink: '/'
+    }
+] %}
+
+{% macro mainMenu(items = menuItems) %}
+
+    {% set test = { inline: false } %}
+
+    {{ heandler.merge(defaultMenuSettings, test) }}
+    {% if items %}
+        <nav aria-label="Main Navigation" class="nav">
+            <ul class="main-menu__list">
+                {% for item in items %}
+                    {{ menuItem(item.menuItemName, item.menuItemlink, item.menuSubitems) }}
+                {% endfor %}
+            </ul>
+        </nav>
+    {% endif %}
+{% endmacro %}
+
+{% macro menuItem(name, link, submenu, class) %}
+    {% if name %}
+        <li class="{% if class %}{{ class }}{% else %}main-menu__list-item{% endif %}">
+            {% if link %}
+            <a href="{{ link }}">
+                {% endif %}
+                {{ name }}
+                {% if submenu %}
+                    <ul class="main-submenu__list">
+                        {% for item in submenu %}
+                            {{ menuItem(item.menuItemName, item.menuItemlink, item.menuSubitems, 'main-submenu__list-item') }}
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                {% if link %}
+            </a>
+            {% endif %}
+        </li>
+    {% endif %}
+{% endmacro %}

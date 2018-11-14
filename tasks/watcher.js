@@ -4,24 +4,24 @@ var gulp = require('gulp'),
 
 gulp.task('watch', function () {
     watch(config.tpl.watch, function(event, cb) {
-        gulp.start('tpl');
+        gulp.run('tpl');
     });
 
     watch(config.style.src, function(event, cb) {
-        gulp.start('scss');
+        gulp.run('scss');
     });
 
     watch(config.js.watch, function(event, cb) {
-        gulp.start('scripts');
+        gulp.run('scripts');
     });
 
     watch(config.fonts.src, function(event, cb) {
-            gulp.start('fonts');
+            gulp.run('fonts');
     });
     // watch([path.watch.img], function(event, cb) {
-    //     gulp.start('image:build');
+    //     gulp.run('image:build');
     // });
     // watch([path.watch.fonts], function(event, cb) {
-    //     gulp.start('fonts:build');
+    //     gulp.run('fonts:build');
     // });
 });

@@ -1,0 +1,11 @@
+{% macro merge(defaultSettings, mergeSettings) %}
+  {% if defaultSettings and mergeSettings %}
+    {% for key, value in mergeSettings %}
+      {% for defaultItemKey, defaultItemValue in defaultSettings %}
+        {% if key === defaultItemKey %}
+
+        {% endif %}
+      {% endfor %}
+    {% endfor %}
+  {% endif %}
+{% endmacro %}

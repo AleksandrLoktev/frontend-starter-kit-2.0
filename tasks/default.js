@@ -5,6 +5,7 @@ gulp.task('default', [
         'clear',
         'scripts',
         'tpl',
+        'watch',
         'font',
         'font-css',
         'style',
