@@ -1,21 +1,22 @@
-var gulp = require('gulp'),
-    watch = require('gulp-watch'),
-    fonts = ['clean-font-css', 'font', 'font-css', 'add'];
+import gulp from 'gulp';
+import config from './config';
+import watch from 'gulp-watch';
+let fonts = ['clean-font-css', 'font', 'font-css', 'add'];
 
-gulp.task('watch', function () {
-    watch(config.tpl.watch, function(event, cb) {
+gulp.task('watch', () => {
+    watch(config.tpl.watch, () => {
         gulp.run('tpl');
     });
 
-    watch(config.style.src, function(event, cb) {
+    watch(config.style.src, () => {
         gulp.run('scss');
     });
 
-    watch(config.js.watch, function(event, cb) {
+    watch(config.js.watch, () => {
         gulp.run('scripts');
     });
 
-    watch(config.fonts.src, function(event, cb) {
+    watch(config.fonts.src, () => {
             gulp.run('fonts');
     });
     // watch([path.watch.img], function(event, cb) {

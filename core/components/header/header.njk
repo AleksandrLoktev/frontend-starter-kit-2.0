@@ -2,6 +2,7 @@
 
 {% set default = {
     logo: true,
+    menu: true,
     languageSwitcher: {
         items: [
             'En',
@@ -11,8 +12,17 @@
     }
 } %}
 
-{% macro header(menuSettings) %}
+{% macro header(settings) %}
+    {% if settings %}
+        {% set settings = mergeOptions(default, settings) %}
+        {% else %}
+            {% set settings = default %}
+    {% endif %}
+
+
     <header class="header">
-        {{ menuBlock.mainMenu(menuSettings) }}
+        {% if settings.menu %}
+            {{ menuBlock.mainMenu(null, menuSettings) }}
+        {% endif %}
     </header>
 {% endmacro %}

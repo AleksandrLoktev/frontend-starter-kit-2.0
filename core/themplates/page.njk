@@ -8,18 +8,8 @@
     <link rel="stylesheet" type="text/css" href="../css/style.min.css">
 </head>
 <body>
-{% set menu = [
-    {
-        menuItemName: 'First',
-        menuItemlink: '/home'
-    },
-    {
-        menuItemName: 'Seconde',
-        menuItemlink: '/home'
-    }
-] %}
 
-{{ headerBlock.header(menu) }}
+{{ headerBlock.header() }}
 
 {% block content %}
     <h1>Content</h1>

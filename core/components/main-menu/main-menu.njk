@@ -16,15 +16,15 @@
     },
     {
         menuItemName: 'Item 3',
-        menuItemlink: '/r',
+        menuItemlink: '/',
         menuSubitems: [
             {
                 menuItemName: 'Item 3.1',
-                menuItemlink: '/h'
+                menuItemlink: '/'
             },
             {
                 menuItemName: 'Item 3.2',
-                menuItemlink: '/f'
+                menuItemlink: '/'
             }
         ]
     },
@@ -34,11 +34,11 @@
     }
 ] %}
 
-{% macro mainMenu(items = menuItems) %}
+{% macro mainMenu(items, settings) %}
+    {% if items %} {% set items = items%}
+        {% else %} {% set items = menuItems %}
+    {% endif %}
 
-    {% set test = { inline: false } %}
-
-    {{ heandler.merge(defaultMenuSettings, test) }}
     {% if items %}
         <nav aria-label="Main Navigation" class="nav">
             <ul class="main-menu__list">
@@ -58,15 +58,19 @@
                 {% endif %}
                 {{ name }}
                 {% if submenu %}
+                {% if link %}
+                 </a>
+                {% endif %}
                     <ul class="main-submenu__list">
                         {% for item in submenu %}
                             {{ menuItem(item.menuItemName, item.menuItemlink, item.menuSubitems, 'main-submenu__list-item') }}
                         {% endfor %}
                     </ul>
+                    {% else %}
+                        {% if link %}
+                            </a>
+                        {% endif %}
                 {% endif %}
-                {% if link %}
-            </a>
-            {% endif %}
         </li>
     {% endif %}
 {% endmacro %}

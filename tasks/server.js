@@ -1,5 +1,5 @@
-var gulp = require('gulp'),
-    browserSync = require("browser-sync");
+import gulp from 'gulp';
+import browserSync from "browser-sync";
 
 var serverConfig = {
     server: {
@@ -10,6 +10,6 @@ var serverConfig = {
     port: 3000
 };
 
-gulp.task('server', function () {
+gulp.task('server', () => {
     browserSync(serverConfig);
 });

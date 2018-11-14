@@ -1,21 +1,21 @@
-var gulp = require('gulp'),
-    config = require('./config'),
-    plumber = require('gulp-plumber'),
-    sourcemaps = require('gulp-sourcemaps'),
-    browserSync = require("browser-sync"),
-    tsify = require("tsify"),
-    browserify = require("browserify"),
-    babelify = require('babelify'),
-    reload = browserSync.reload,
-    babel = require("gulp-babel"),
-    rename = require("gulp-rename"),
-    uglify = require("gulp-uglify"),
-    notify = require('gulp-notify'),
-    color = require('gulp-color'),
-    source = require("vinyl-source-stream"),
-    buffer = require("vinyl-buffer");
+import gulp from 'gulp';
+import config from './config';
+import plumber from 'gulp-plumber';
+import sourcemaps from 'gulp-sourcemaps';
+import browserSync from "browser-sync";
+import tsify from "tsify";
+import browserify from "browserify";
+import babelify from 'babelify';
+let reload = browserSync.reload;
+import babel from "gulp-babel";
+import rename from "gulp-rename";
+import uglify from "gulp-uglify";
+import notify from 'gulp-notify';
+import color from 'gulp-color';
+import source from "vinyl-source-stream";
+import buffer from "vinyl-buffer";
 
-gulp.task('scripts', function () {
+gulp.task('scripts', () => {
     config.js.src.map((entry) => {
         return browserify({
             debug: true,
@@ -33,7 +33,7 @@ gulp.task('scripts', function () {
                     }
                 }]
             })
-            .bundle().on('error', function(error) {
+            .bundle().on('error', (error) => {
                 notify.onError({
                     title:    "Gulp",
                     message:  "<%= error.name %><br>" +
