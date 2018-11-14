@@ -9,8 +9,8 @@ module.exports = {
         build: 'build/html/'
     },
     js: {
-        src: ['./src/ts/core.ts'],
-        watch:['./src/**/*.ts', './core/**/*.ts'],
+        src: ['./src/ts/app.ts'],
+        watch:['./core/**/*.ts', './src/ts/app.ts', './src/**/*.ts'],
         build: 'build/js/'
     },
     fonts: {

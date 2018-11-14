@@ -1,8 +1,8 @@
-var gulp = require('gulp'),
-    config = require('./config'),
-    git = require('gulp-git');
+import gulp from 'gulp';
+import config from './config';
+import git from 'gulp-git';
 
-gulp.task('add', function(){
+gulp.task('add', () => {
     return gulp.src(config.fonts.git)
         .pipe(git.add());
 });

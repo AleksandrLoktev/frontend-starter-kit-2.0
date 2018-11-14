@@ -1,10 +1,11 @@
-var gulp = require('gulp'),
-    config = require('./config');
+import gulp from 'gulp';
+import config from './config';
 
 gulp.task('default', [
         'clear',
         'scripts',
         'tpl',
+        'watch',
         'font',
         'font-css',
         'style',
