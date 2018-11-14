@@ -1,7 +1,7 @@
 # Frontend starter kit 2.0
 
 This starter kit was created for easier starts of projects. <br>
-It has to to shrink spending for creating project.
+It has to shrink spending time for creating project.
 
 For work with it you have to have stable "nodejs" version.
 
