@@ -1,4 +1,3 @@
-{% import 'core/components/hendler/hendler.njk' as heandler %}
 
 {% set defaultMenuSettings = {
     inline: true,
@@ -35,12 +34,12 @@
 ] %}
 
 {% macro mainMenu(items, settings) %}
-    {% if items %} {% set items = items%}
+    {% if items %} {% set items = items %}
         {% else %} {% set items = menuItems %}
     {% endif %}
 
     {% if items %}
-        <nav aria-label="Main Navigation" class="nav">
+        <nav aria-label="Main Navigation" class="main-nav">
             <ul class="main-menu__list">
                 {% for item in items %}
                     {{ menuItem(item.menuItemName, item.menuItemlink, item.menuSubitems) }}
