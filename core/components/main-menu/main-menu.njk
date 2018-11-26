@@ -1,6 +1,6 @@
 
 {% set defaultMenuSettings = {
-    inline: true,
+    dropdown: true,
     wide: false
 } %}
 
@@ -40,7 +40,7 @@
 
     {% if items %}
         <nav aria-label="Main Navigation" class="main-nav">
-            <ul class="main-menu__list">
+            <ul class="main-menu__list {% if defaultMenuSettings.dropdown %} -dropdown {% endif %}">
                 {% for item in items %}
                     {{ menuItem(item.menuItemName, item.menuItemlink, item.menuSubitems) }}
                 {% endfor %}

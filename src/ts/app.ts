@@ -1,4 +1,4 @@
 import "@babel/polyfill";
-import MainMenu from '../../core/components/main-menu/main-menu';
+import Dropdown from '../../core/components/dropdown/dropdown';
 
-let mainMenu = new MainMenu();
+let dropdown = new Dropdown();
