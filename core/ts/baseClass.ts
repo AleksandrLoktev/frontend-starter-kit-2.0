@@ -1,7 +1,8 @@
 export class BaseClass {
-  constructor (protected _selector: Object | string[]) {
+  constructor (protected _selector: Object | string[], public element?: any) {
     this.selector = _selector;
   };
+
 
   set selector(element: any) {
     switch (typeof element) {
@@ -14,6 +15,8 @@ export class BaseClass {
       case 'object':
         (() => {
           if (!Array.isArray(element)) {
+            this.element = this._selector;
+            this.selector;
             this.init();
           } else {
             element.forEach((value) => {
@@ -25,11 +28,11 @@ export class BaseClass {
     }
   }
 
-  get selector() {
-    return this._selector;
+  getSelector()  {
+    return document.querySelector(this._selector);
   }
 
   init() {
-    console.log(this._selector);
+    // console.log(this._selector);
   };
 }
