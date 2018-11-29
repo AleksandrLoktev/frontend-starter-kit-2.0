@@ -16,7 +16,6 @@ export class BaseClass {
         (() => {
           if (!Array.isArray(element)) {
             this.element = this._selector;
-            this.selector;
             this.init();
           } else {
             element.forEach((value) => {
@@ -29,7 +28,7 @@ export class BaseClass {
   }
 
   getSelector()  {
-    return document.querySelector(this._selector);
+    // return document.querySelector(this._selector[0]);
   }
 
   init() {
