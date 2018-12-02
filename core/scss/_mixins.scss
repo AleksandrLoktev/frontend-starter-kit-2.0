@@ -1,0 +1,35 @@
+// Calculate item width
+@function getCintaiterItemWidth($container-max-width, $item-width) {
+  @return unquote( ($item-width * 100)/$container-max-width + '%');
+}
+
+// Clearfix for wrappers, which have floating children
+@mixin clearfix {
+  &::after {
+    content: '';
+    clear: both;
+    display: table;
+  }
+}
+
+// Set parameters for container and his children elements
+@mixin container($container-max-width: 1160, $item-width: 360) {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  max-width: #{$container-max-width}px;
+  justify-content: space-between;
+
+  & > * {
+    flex-basis: 100%;
+  }
+
+  .container-item {
+    flex-basis: getCintaiterItemWidth($container-max-width, $item-width);
+    float: left;
+  }
+}

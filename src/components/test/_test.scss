@@ -1,0 +1,5 @@
+h1 {
+  @include breakpoint('lg'){
+    color: blue;
+  }
+}

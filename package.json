@@ -53,7 +53,6 @@
     "gulp-git": "^2.8.0",
     "gulp-iconfont": "^10.0.2",
     "gulp-iconfont-css": "^2.3.0",
-    "gulp-if": "^2.0.2",
     "gulp-inject": "^4.3.2",
     "gulp-minify-css": "^1.2.4",
     "gulp-notify": "^3.2.0",
@@ -64,6 +63,7 @@
     "gulp-rename": "^1.4.0",
     "gulp-replace": "^1.0.0",
     "gulp-sass": "^4.0.2",
+    "gulp-sass-glob": "^1.0.9",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.1",
     "gulp-util": "^3.0.8",
@@ -79,5 +79,9 @@
     "typescript": "^3.1.6",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0"
+  },
+  "dependencies": {
+    "normalize-scss": "^7.0.1",
+    "sass-breakpoints": "^2.1.0"
   }
 }

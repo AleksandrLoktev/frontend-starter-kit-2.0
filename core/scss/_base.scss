@@ -1,0 +1,13 @@
+@import "mixins";
+@import "core/components/main-menu/main-menu";
+@import "core/components/logo/logo";
+@import "core/components/header/header";
+@import "core/components/footer/_footer";
+
+html {
+  font-size: 10px;
+}
+
+.container {
+  @include container();
+}
