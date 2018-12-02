@@ -1,6 +1,7 @@
 import sourcemaps from 'gulp-sourcemaps';
 import gulp from 'gulp';
 import sass from 'gulp-sass';
+import sassGlob from 'gulp-sass-glob';
 import cssmin from 'gulp-minify-css';
 import prefixer from 'gulp-autoprefixer';
 import color from 'gulp-color';
@@ -14,7 +15,10 @@ let reload = browserSync.reload;
 gulp.task('scss', function scss () {
         gulp.src(config.style.src)
         .pipe(sourcemaps.init())
-            .pipe(sass().on('error', (error) =>  {
+            .pipe(sassGlob())
+            .pipe(sass({
+                includePaths: ['./node_modules/']
+            }).on('error', (error) =>  {
                 notify.onError({
                     title:    "Gulp",
                     message:  "Error: <%= error.messageOriginal %>" +

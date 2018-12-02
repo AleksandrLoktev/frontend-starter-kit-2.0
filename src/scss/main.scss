@@ -1,1 +1,16 @@
+// Base settings for browser
+@import "normalize-scss/sass/normalize/import-now";
+
+// Breakpoints, you can visit this link: https://www.npmjs.com/package/sass-breakpoints to familiarize
+// with documentation
+@import "sass-breakpoints/mixins";
+@import 'breakpoint-settings'; // Base resolutions
+
+// Fonts for project
 @import "fonts";
+
+// Don`t remove it, please. There is including base styles for all project
+@import "./core/scss/_base.scss";
+
+// You can include styles for your component below
+@import "src/components/test/_test";

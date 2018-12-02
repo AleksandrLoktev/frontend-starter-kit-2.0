@@ -8,7 +8,7 @@ gulp.task('watch', () => {
         gulp.run('tpl');
     });
 
-    watch(config.style.src, () => {
+    watch(config.style.watch, () => {
         gulp.run('scss');
     });
 

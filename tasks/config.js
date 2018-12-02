@@ -1,6 +1,7 @@
 module.exports = {
     style : {
-        src: ['./src/scss/main.scss', './src/**/*.scss', './core/**/*.scss', '!./src/scss/**/_*.scss'],
+        src: ['./src/scss/main.scss'],
+        watch: ['./src/**/*.scss', './core/**/*.scss', './src/**/_*.scss', './core/**/_*.scss'],
         build: 'build/css/'
     },
     tpl : {
