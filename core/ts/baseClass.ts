@@ -1,5 +1,5 @@
 export class BaseClass {
-  constructor (protected _selector: Object | string[], public element?: any) {
+  constructor (protected _selector: Object | string[] | string, public element?: any) {
     this.selector = _selector;
   };
 
@@ -28,10 +28,20 @@ export class BaseClass {
   }
 
   getSelector()  {
-    // return document.querySelector(this._selector[0]);
+    switch (typeof this._selector) {
+      case 'string':
+        return document.querySelectorAll(`${this._selector}`);
+        break;
+      case 'object':
+        if (Array.isArray(this._selector)) {
+          return this._selector.map((item) => document.querySelectorAll(item));
+        } else {
+          return this._selector;
+        }
+        break;
+    }
   }
 
   init() {
-    // console.log(this._selector);
   };
 }
