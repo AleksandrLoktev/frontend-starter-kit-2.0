@@ -20,9 +20,9 @@ module.exports = {
         buildStyle: './src/scss',
         build: 'build/fonts/',
         git: './src/scss/**'
+    },
+    icons: {
+        src: ['./src/assets/icons/*.svg'],
+        build: 'build/icons/'
     }
-    // icons: {
-    //     src: ['./src/assets/icons/*.svg'],
-    //     build: 'build/fonts/'
-    // }
 };
