@@ -1,6 +1,6 @@
+{% import 'core/components/dropdown/dropdown.njk' as dropdownBlock %}
 
 {% set defaultMenuSettings = {
-    dropdown: true,
     wide: false
 } %}
 
@@ -40,7 +40,7 @@
 
     {% if items %}
         <nav aria-label="Main Navigation" class="main-nav">
-            <ul class="main-menu__list {% if defaultMenuSettings.dropdown %} -dropdown {% endif %}">
+            <ul class="main-menu__list">
                 {% for item in items %}
                     {{ menuItem(item.menuItemName, item.menuItemlink, item.menuSubitems) }}
                 {% endfor %}
@@ -72,5 +72,4 @@
                 {% endif %}
         </li>
     {% endif %}
-  <div class="test"></div>
 {% endmacro %}

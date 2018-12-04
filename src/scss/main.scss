@@ -15,5 +15,8 @@
 // Don`t remove it, please. There is including base styles for all project
 @import "./core/scss/_base";
 
-// You can include styles for your component below
-@import "src/components/test/_test";
+// You can include styles for your component from "core" folder below
+@import "core/components/dropdown/dropdown";
+
+// You can include styles for your component from "src" folder below
+@import "src/components/test/test";

@@ -1,0 +1,14 @@
+.dropdown {
+  $dropdown: &;
+
+  &__content {
+    //display: none;
+  }
+
+  &.is-opened {
+    #{$dropdown}__content {
+      display: block;
+      height: auto;
+    }
+  }
+}
