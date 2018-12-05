@@ -1,0 +1,26 @@
+{% set defaultDropdownSettings = {
+    elementTitle: 'Click',
+    element: 'button'
+}%}
+
+{% macro dropdown(settings) %}
+    {% if settings %}
+        {% set settings = mergeOptions(defaultDropdownSettings, settings) %}
+    {% else %}
+        {% set settings = defaultDropdownSettings %}
+    {% endif %}
+
+    {% if settings.element === 'button' %}
+        <div class="dropdown-element">
+            {% if settings.elementTitle %}
+                <button class="dropdown-toggle__btn">{{ settings.elementTitle }}</button>
+            {% endif %}
+            <div class="dropdown__content">
+                {{ caller() }}
+            </div>
+        </div>
+        {% elseif element === 'link' %}
+    {% endif %}
+
+
+{% endmacro %}

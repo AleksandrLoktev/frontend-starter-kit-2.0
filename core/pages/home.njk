@@ -1,0 +1,18 @@
+{% import 'core/components/dropdown/dropdown.njk' as dropdownBlock %}
+
+{% extends 'core/pages/page.njk' %}
+{% block content %}
+    <h1>Home page</h1>
+
+    {% call dropdownBlock.dropdown() %}
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda at eos ex expedita maiores molestias,
+        perspiciatis sint. Ab beatae dicta doloribus, eaque earum error maiores, natus, nemo non optio porro quam rem tempora
+        ullam vel. Atque, cum cupiditate ea excepturi maiores minima omnis porro repellat sint tempore. Accusamus beatae
+        debitis et eum iure magni molestias rerum saepe unde veniam? Consequatur debitis dicta exercitationem incidunt laborum
+        maxime molestias quos unde voluptatem. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda at eos ex expedita maiores molestias,
+        perspiciatis sint. Ab beatae dicta doloribus, eaque earum error maiores, natus, nemo non optio porro quam rem tempora
+        ullam vel. Atque, cum cupiditate ea excepturi maiores minima omnis porro repellat sint tempore. Accusamus beatae
+        debitis et eum iure magni molestias rerum saepe unde veniam? Consequatur debitis dicta exercitationem incidunt laborum
+        maxime molestias quos unde voluptatem.
+    {% endcall %}
+{% endblock %}
