@@ -1,8 +1,7 @@
 export class BaseClass {
-  constructor (protected _selector: Object | string[] | string, public element?: any) {
+  constructor (protected _selector: Object | string[] | string) {
     this.selector = _selector;
   };
-
 
   set selector(element: any) {
     switch (typeof element) {
@@ -14,29 +13,28 @@ export class BaseClass {
         break;
       case 'object':
         (() => {
-          if (!Array.isArray(element)) {
-            this.element = this._selector;
-            this.init();
-          } else {
+          if (Array.isArray(element)) {
             element.forEach((value) => {
-              const el = new BaseClass(value);
-            });
+            const el = new BaseClass(value);
+          });
           }
-        })();
+          })();
         break;
     }
   }
 
-  getSelector()  {
+  get selector()  {
     switch (typeof this._selector) {
       case 'string':
         return document.querySelectorAll(`${this._selector}`);
         break;
       case 'object':
-        if (Array.isArray(this._selector)) {
+        if (Array.isArray(this._selector) && this._selector.length) {
           return this._selector.map((item) => document.querySelectorAll(item));
-        } else {
+        } else if (this._selector && (<Object[]>this._selector).length) {
           return this._selector;
+        } else {
+          return null;
         }
         break;
     }

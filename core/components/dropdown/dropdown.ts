@@ -2,13 +2,14 @@ import { BaseClass } from '../../ts/baseClass';
 
 export default class Dropdown extends BaseClass {
 
- constructor(protected _selector: Object | string[] = ['.test']) {
+ constructor(protected _selector: Object | string[] = []) {
    super(
      _selector
    );
+   this.init();
  }
 
   init() {
-   super.init();
+   console.log(this.selector);
   }
 }
