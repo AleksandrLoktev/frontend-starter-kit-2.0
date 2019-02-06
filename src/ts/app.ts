@@ -1,7 +1,12 @@
-import "@babel/polyfill";
-import Dropdown from '../../core/components/dropdown/dropdown';
-import * as Swiper from 'swiper/dist/js/swiper';
+// import "@babel/polyfill";
+import "jquery";
+import "jquery.mmenu";
+// import Dropdown from '../../core/components/dropdown/dropdown';
 
-let dropdown = new Dropdown(['.test', '.container']);
 
-
+$(document).ready(function( $ ) {
+    console.log(234234);
+    $("#menu").mmenu({
+        "iconPanels": true
+    });
+});

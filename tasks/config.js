@@ -12,7 +12,7 @@ module.exports = {
     js: {
         src: ['./src/ts/app.ts'],
         watch:['./core/**/*.ts', './src/ts/app.ts', './src/**/*.ts'],
-        build: 'build/js/'
+        build: './build/js/'
     },
     fonts: {
         srcStyle: ['./src/assets/fonts'],
