@@ -23,7 +23,6 @@ var manageEnvironment = (environment) => {
                 } catch(e) {
                     // Property in destination object not set; create it and set its value.
                     obj1[p] = obj2[p];
-
                 }
             }
 

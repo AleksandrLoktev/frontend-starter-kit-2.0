@@ -1,0 +1,33 @@
+{% set expansionPanelDefSet = {
+    header: 'Click here',
+    content: true,
+    opened: false,
+    customContent: false,
+    dropdown: true
+}%}
+
+{% macro expansionPanel(params) %}
+    {% if params %}
+        {% set params = mergeOptions(expansionPanelDefSet, params) %}
+        {% else %}
+            {% set params = expansionPanelDefSet %}
+    {% endif %}
+    <div class="expansion-panel {{ '-dropdown' if params.dropdown }} {{ '-opened' if params.opened }}">
+        {% if params.header %}
+            <button class="expansion-panel__header -btn" {{ 'aria-expanded="true"' if params.opened else
+            'aria-expanded="false"' }}>{{ params.header }}</button>
+        {% endif %}
+        {% if params.content %}
+            <div class="expansion-panel__content">
+                {% if not params.customContent %}
+                   <p>
+                       Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci asperiores consequuntur cum
+                       ducimus error, explicabo illum in ipsa iste iusto, labore maiores maxime minus molestias porro qui
+                       quidem sint vitae.
+                   </p>
+                    {% else %} {{ caller() }}
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+{% endmacro %}
