@@ -26,12 +26,12 @@
   },
   "homepage": "https://github.com/AleksandrLoktev/Avis-theme-current#readme",
   "devDependencies": {
-    "@babel/core": "^7.1.2",
+    "@babel/core": "^7.3.4",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/plugin-syntax-export-default-from": "^7.0.0",
     "@babel/plugin-transform-modules-commonjs": "^7.1.0",
     "@babel/polyfill": "^7.0.0",
-    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-env": "^7.3.4",
     "babel-core": "^6.26.3",
     "babel-polyfill": "^6.26.0",
     "babel-preset-env": "^1.7.0",
@@ -83,8 +83,11 @@
   "dependencies": {
     "@types/node": "^10.12.11",
     "@types/swiper": "^4.2.4",
+    "babel-loader": "^8.0.5",
     "normalize-scss": "^7.0.1",
     "sass-breakpoints": "^2.1.0",
-    "swiper": "^4.4.2"
+    "swiper": "^4.4.2",
+    "webpack": "^4.29.6",
+    "webpack-stream": "^5.2.1"
   }
 }
