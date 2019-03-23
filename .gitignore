@@ -4,7 +4,7 @@
 # Ignore Node files.
 node_modules
 
-# Ignore build html files.
+# Ignore build files.
 build
 
 npm.gif
