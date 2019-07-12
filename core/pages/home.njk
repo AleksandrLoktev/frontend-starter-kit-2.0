@@ -1,9 +1,7 @@
-{% from 'core/components/expansion-panel/expansion-panel.njk' import expansionPanel %}
+{% import 'src/components/slider/slider.njk' as swiper %}
 
 {% extends 'core/pages/page.njk' %}
+
 {% block content %}
-    {% call expansionPanel({
-        header: 'expansionPanel'
-    }) -%}
-    {%- endcall %}
+   {{ swiper.slider() }}
 {% endblock %}
