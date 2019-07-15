@@ -1,4 +1,4 @@
-{#{% import 'core/components/header/header.njk' as headerBlock %}#}
+{#{% import 'core/components/header/header.twig' as headerBlock %}#}
 
 <!doctype html>
 <html lang="en">
@@ -14,7 +14,7 @@
       <h1>Content</h1>
 {% endblock %}
 </div>
-
+{% include '../components/footer/footer.twig' with {'myVar': 'Text from outside'} %}
 </body>
 
 <script type="text/javascript" src="../js/bundle.js"></script>
