@@ -83,6 +83,7 @@
   "dependencies": {
     "babel-loader": "^8.0.5",
     "expose-loader": "^0.7.5",
+    "gulp-twig": "^1.2.0",
     "jquery": "^3.3.1",
     "normalize-scss": "^7.0.1",
     "sass-breakpoints": "^2.1.0",

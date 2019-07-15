@@ -1,7 +1,7 @@
 import gulp from 'gulp';
 import config from './config';
 import notify from 'gulp-notify';
-import nunjucksRender from 'gulp-nunjucks-render';
+import twig from 'gulp-twig';
 import browserSync from "browser-sync";
 import through from "through2";
 let reload = browserSync.reload;
@@ -35,19 +35,7 @@ var manageEnvironment = (environment) => {
 gulp.task('tpl', () => {
     config.tpl.src.map((entry) => {
         return gulp.src(entry)
-        .pipe(nunjucksRender({
-                manageEnv: manageEnvironment
-        }).on('error', function(error) {
-            console.log(error);
-                notify.onError({
-                    title:    "Gulp",
-                    message:  "<%= error.name %><br>" +
-                              "Error: <%= error.message %>" +
-                              "Path: <%= error.fileName %>",
-                    sound:    "Beep"
-                })(error);
-            })
-        )
+        .pipe(twig())
         .pipe(gulp.dest(config.tpl.build))
         .pipe(reload({stream: true}));
     });

@@ -5,8 +5,8 @@ module.exports = {
         build: 'build/css/'
     },
     tpl : {
-        src: ['./src/pages/**/*.njk', './core/pages/**/*.njk'],
-        watch: ['./src/**/*.njk', './core/**/*.njk'],
+        src: ['./src/pages/**/*.twig', './core/pages/**/*.twig'],
+        watch: ['./src/**/*.twig', './core/**/*.twig'],
         build: 'build/html/'
     },
     js: {
